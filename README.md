@@ -1,4 +1,4 @@
-# springapp
+# ARCy
 A Spring App that aggregates cryptocurrency information.
 Currently there is only one source but that will probably change in the future.
 
