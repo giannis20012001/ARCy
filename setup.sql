@@ -1,0 +1,23 @@
+CREATE TABLE Cryptocurrency (
+	cryptocurrencyID SERIAL NOT NULL,
+	base TEXT NOT NULL DEFAULT '',
+	target TEXT NOT NULL DEFAULT '',
+	price DOUBLE PRECISION NOT NULL,
+	volume DOUBLE PRECISION NOT NULL,
+	change DOUBLE PRECISION NOT NULL,
+	time_stamp BIGINT NOT NULL,
+	success BOOLEAN NOT NULL,
+	error TEXT NOT NULL DEFAULT '',
+	PRIMARY KEY (CryptocurrencyID)
+);
+
+CREATE TABLE Market (
+	marketID SERIAL NOT NULL,
+	cryptocurrencyID INTEGER NOT NULL,
+	indx INTEGER NOT NULL,
+	market TEXT NOT NULL DEFAULT '',
+	marketPrice DOUBLE PRECISION NOT NULL,
+	marketVolume DOUBLE PRECISION NOT NULL,
+	PRIMARY KEY (marketID),
+	FOREIGN KEY (cryptocurrencyID) REFERENCES Cryptocurrency(cryptocurrencyID)
+);
